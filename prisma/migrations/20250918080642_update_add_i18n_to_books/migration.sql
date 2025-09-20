@@ -1,0 +1,7 @@
+-- AlterTable
+ALTER TABLE "public"."Book" ALTER COLUMN "category_en" DROP DEFAULT,
+ALTER COLUMN "category_fa" DROP DEFAULT,
+ALTER COLUMN "description_en" DROP DEFAULT,
+ALTER COLUMN "description_fa" DROP DEFAULT,
+ALTER COLUMN "title_en" DROP DEFAULT,
+ALTER COLUMN "title_fa" DROP DEFAULT;

@@ -1,0 +1,54 @@
+{
+  "Validations": {
+    "pleaseCorrectErrors": "لطفا خطاهای موجود در فرم را تصحیح کنید.",
+    "required": "این فیلد اجباری است.",
+    "invalidUrl": "لطفاً یک آدرس URL معتبر وارد کنید.",
+    "invalidIsbn": "لطفاً یک شماره ISBN معتبر وارد کنید (مثال: 978-3-16-148410-0).",
+    "invalidDate": "لطفاً یک تاریخ معتبر وارد کنید."
+  },
+  "navbar": {
+    "library": "کتابخانه",
+    "createBook": "ایجاد کتاب",
+    "signIn": "ورود",
+    "signOut": "خروج"
+  },
+  "book": {
+    "pleaseSignIn": "لطفا ابتدا وارد شوید",
+    "noBookFound": "هیچ کتابی وجود ندارد",
+    "bookDeletedSuccess": "کتاب با موفقیت حذف شد",
+    "bookDeletedFailed": "حذف کتاب با شکست مواجه شد",
+    "bookUpdatedSuccess": "کتاب با موفقیت به‌روزرسانی شد",
+    "bookUpdatedFailed": "به‌روزرسانی کتاب با شکست مواجه شد",
+    "bookCreatedSuccess": "کتاب با موفقیت ایجاد شد",
+    "bookCreationFailed": "ایجاد کتاب با شکست مواجه شد",
+    "somethingWentWrong": "خطایی رخ داد! لطفاً دوباره تلاش کنید.",
+    "noBooksFound": "هیچ کتابی با این عنوان یافت نشد",
+    "searchFailed": "جستجو با شکست مواجه شد",
+    "details": "جزئیات",
+    "delete": "حذف",
+    "edit": "ویرایش",
+    "areYouSure": "آیا از حذف مطمئن هستید؟",
+    "deleteDescription": "این عمل غیرقابل برگشت است و کتاب برای همیشه حذف خواهد شد.",
+    "cancel": "لغو",
+    "editBook": "ویرایش کتاب",
+    "editBookDescription": "تغییرات مورد نظر را در کتاب اعمال کنید. پس از اتمام، دکمه ذخیره را بزنید.",
+    "title": "عنوان",
+    "description": "توضیحات",
+    "category": "دسته‌بندی",
+    "isbn": "شابک",
+    "cover": "آدرس تصویر",
+    "published": "تاریخ انتشار",
+    "author": "نویسنده",
+    "saveChanges": "ذخیره تغییرات",
+    "createBook": "ایجاد کتاب",
+    "submit": "ثبت",
+    "bookNotFound": "کتاب یافت نشد",
+    "goBack": "بازگشت",
+    "invaidCredentials": "اطلاعات ورود نامعتبر است"
+  },
+  "search": {
+    "placeholder": "جستجو برای کتاب...",
+    "emptySearch": "لطفاً عنوان کتاب را وارد کنید.",
+    "somethingWentWrong": "خطایی رخ داد! لطفاً دوباره تلاش کنید."
+  }
+}

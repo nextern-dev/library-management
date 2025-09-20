@@ -1,0 +1,54 @@
+{
+  "Validations": {
+    "pleaseCorrectErrors": "Please correct the errors in the form.",
+    "required": "This field is required.",
+    "invalidUrl": "Please enter a valid URL.",
+    "invalidIsbn": "Please enter a valid ISBN (e.g., 978-3-16-148410-0).",
+    "invalidDate": "Please enter a valid date."
+  },
+  "navbar": {
+    "library": "Library",
+    "createBook": "Create Book",
+    "signIn": "Sign In",
+    "signOut": "Sign Out"
+  },
+  "book": {
+    "pleaseSignIn": "Please Sign In First",
+    "noBookFound": "There Is No Book",
+    "bookDeletedSuccess": "Book deleted successfully",
+    "bookDeletedFailed": "Failed to delete book",
+    "bookUpdatedSuccess": "Book updated successfully",
+    "bookUpdatedFailed": "Failed to update book",
+    "bookCreatedSuccess": "Book created successfully",
+    "bookCreationFailed": "Failed to create book",
+    "somethingWentWrong": "Something went wrong! Please try again.",
+    "noBooksFound": "No books found matching your search",
+    "searchFailed": "Failed to search books",
+    "details": "Details",
+    "delete": "Delete",
+    "edit": "Edit",
+    "areYouSure": "Are you absolutely sure?",
+    "deleteDescription": "This action cannot be undone. This will permanently delete this book.",
+    "cancel": "Cancel",
+    "editBook": "Edit book",
+    "editBookDescription": "Make changes to the selected book here. Click save when you're done.",
+    "title": "Title",
+    "description": "Description",
+    "category": "Category",
+    "isbn": "ISBN",
+    "cover": "Cover URL",
+    "published": "Published Date",
+    "author": "Author",
+    "saveChanges": "Save changes",
+    "createBook": "Create Book",
+    "submit": "Submit",
+    "bookNotFound": "Book Not Found",
+    "goBack": "Go Back",
+    "invaidCredentials": "Invalid Credentials"
+  },
+  "search": {
+    "placeholder": "Search for books...",
+    "emptySearch": "Please enter a search term.",
+    "somethingWentWrong": "Something went wrong! Please try again."
+  }
+}
