@@ -71,7 +71,9 @@ const BookList = () => {
       if (response.ok) {
         setBooks(data);
       } else {
-        toast.error("Failed to fetch books");
+        if (session?.user) {
+          toast.error("Failed to fetch books");
+        }
       }
     } catch (error) {
       toast.error("Something went wrong while fetching books!");
@@ -196,18 +198,20 @@ const BookList = () => {
           <li key={book.id}>
             <Card className="flex flex-col min-w-full transition-all duration-300 hover:shadow-xl">
               <CardHeader className="flex flex-col items-center text-center">
-                <Avatar className=" w-full h-fit border-2 border-primary">
-                  {session?.user?.image && session?.user?.name && (
+                <Avatar className="w-full h-fit border-2 border-primary rounded-xl overflow-hidden">
+                  {book.cover ? (
                     <AvatarImage
-                      className="object-fill border-2 border-primary rounded-xl"
-                      src={session.user.image}
-                      alt={session.user.name}
+                      className="object-cover w-full h-full"
+                      src={book.cover}
+                      alt={book.title}
                     />
+                  ) : (
+                    <AvatarFallback className="flex items-center justify-center w-full h-fit text-xl">
+                      <LibraryIcon size={50} />
+                    </AvatarFallback>
                   )}
-                  <AvatarFallback className="text-xl w-full h-fit">
-                    <LibraryIcon size={50} />
-                  </AvatarFallback>
                 </Avatar>
+
                 <CardTitle className="text-lg font-semibold line-clamp-1">
                   {book.title}
                 </CardTitle>
