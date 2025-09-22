@@ -19,7 +19,6 @@ import {
 import { useSession } from "next-auth/react";
 import {
   AlertDialog,
-  AlertDialogAction,
   AlertDialogCancel,
   AlertDialogContent,
   AlertDialogDescription,
@@ -45,12 +44,16 @@ import { toast } from "sonner";
 import Searchbar from "./Searchbar";
 import { LibraryIcon, Pencil, Trash2 } from "lucide-react";
 import { editBookSchema } from "@/lib/bookSchema";
-import { useTranslations, useLocale } from "next-intl";
+import { useTranslations } from "next-intl";
 import { Book } from "@/types/book";
+import { set } from "zod";
+import RippleWaveLoader from "./ui/loading";
 
 const BookList = () => {
+  const { data: session } = useSession();
   const t = useTranslations("book");
   const tErrors = useTranslations("Validations");
+  const [loading, setLoading] = useState(true);
   const [errors, setErrors] = useState<{ [key: string]: string[] }>({});
   const [books, setBooks] = useState([]);
   const [editingBook, setEditingBook] = useState({
@@ -78,24 +81,26 @@ const BookList = () => {
     } catch (error) {
       toast.error("Something went wrong while fetching books!");
       console.error("Failed to fetch books", error);
+    } finally {
+      setLoading(false);
     }
   };
 
   useEffect(() => {
-    fetchBooks();
+    const timeout = setTimeout(() => {
+      fetchBooks();
+    }, 1500);
+
+    return () => {
+      clearTimeout(timeout);
+    };
   }, []);
 
-  const { data: session } = useSession();
-
-  if (!session?.user) {
+  if (loading) {
     return (
-      <p className="text-center text-2xl font-semibold">{t("pleaseSignIn")}</p>
-    );
-  }
-
-  if (books.length === 0) {
-    return (
-      <p className="text-center text-2xl font-semibold">{t("noBookFound")}</p>
+      <div className="flex flex-col items-center justify-center my-auto">
+        <RippleWaveLoader />
+      </div>
     );
   }
 
@@ -190,8 +195,18 @@ const BookList = () => {
     }
   };
 
+  if (!session?.user) {
+    return (
+      <p className="text-center text-2xl font-semibold">{t("pleaseSignIn")}</p>
+    );
+  } else if (books.length === 0) {
+    return (
+      <p className="text-center text-2xl font-semibold">{t("noBookFound")}</p>
+    );
+  }
+
   return (
-    <div className="flex flex-col items-center justify-center gap-10 min-w-full">
+    <div className="flex flex-col items-center justify-center gap-10 min-w-full mx-auto text-center">
       <Searchbar onSearch={handleSearch} />
       <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 min-w-full ">
         {books.map((book: Book) => (

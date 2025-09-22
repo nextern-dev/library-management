@@ -29,18 +29,20 @@ const Navbar = () => {
       <Link href={"/"}>
         <div className="inline-flex items-center gap-1">
           <SquareLibraryIcon size={35} />
-          <p className="font-bold ">{t("library")}</p>
+          <p className="font-bold hidden md:block">{t("library")}</p>
         </div>
       </Link>
       <div>
         {session ? (
-          <div className="inline-flex items-center gap-5">
-            {pathName === "/create-book" ? (
+          <div className="inline-flex justify-between items-center gap-5">
+            {pathName === "/en/create-book" ||
+            pathName === "/fa/create-book" ? (
               <Link
                 className="inline-flex items-center gap-1 text-muted-foreground hover:text-primary"
                 href="/"
               >
-                <HomeIcon size={30} />
+                <HomeIcon />
+                <p className="hidden md:block">{t("returnHome")}</p>
               </Link>
             ) : (
               <Link
@@ -48,13 +50,14 @@ const Navbar = () => {
                 href="/create-book"
               >
                 <PlusCircleIcon />
-                <p>{t("createBook")}</p>
+                <p className="hidden md:block">{t("createBook")}</p>
               </Link>
             )}
 
             <LanguageSwitcher />
 
-            <AnimatedThemeToggler />
+            <AnimatedThemeToggler className="hover:cursor-pointer" />
+
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 {session?.user?.image && (

@@ -28,7 +28,7 @@ const LanguageSwitcher = () => {
 
   return (
     <Select value={locale} onValueChange={handleSelectChange}>
-      <SelectTrigger className="w-[180px]">
+      <SelectTrigger className="md:w-[30vh] w-[15vh]">
         <SelectValue />
       </SelectTrigger>
       <SelectContent>

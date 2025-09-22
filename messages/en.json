@@ -9,6 +9,7 @@
   "navbar": {
     "library": "Library",
     "createBook": "Create Book",
+    "returnHome": "Return Home",
     "signIn": "Sign In",
     "signOut": "Sign Out"
   },

@@ -70,7 +70,7 @@ const BookCreateForm = () => {
     }
   };
   return (
-    <div className="container max-w-xl mx-auto p-10">
+    <div className="container max-w-xl mx-auto p-10 text-center">
       <h2 className="text-2xl font-bold mb-10 text-center">
         {t("createBook")}
       </h2>
